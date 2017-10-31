@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/title_bar" />
+
+    <ImageView
+        android:id="@+id/detail_loading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@anim/loading_progress_bar" />
+
+    <com.huaxun.view.PinnedSectionListView
+        xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/news_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topBar"
+        android:dividerHeight="1dip"
+        android:listSelector="#00000000"/>
+
+</RelativeLayout>

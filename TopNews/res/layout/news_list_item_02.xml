@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 普通：小图右方加一个标题 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/front"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:tag="front" >
+
+        <ImageView
+            android:id="@+id/normal_iv"
+            android:layout_width="110dp"
+            android:layout_height="73dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/preview_bg05" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/normal_tv_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="测试标题是不是可以用测试标题是不是可以用测试标题是不是可以用"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/normal_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/normal_tv_title"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="发布时间"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/normal_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_below="@id/normal_tv_title"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/normal_tv_time"
+                android:scaleType="fitXY"
+                android:src="@drawable/article_tip_special" />
+
+            <ImageView
+                android:id="@+id/popicon"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/normal_tv_title"
+                android:layout_marginRight="5dp"
+                android:duplicateParentState="false"
+                android:scaleType="center"
+                android:src="@drawable/popicon_listpage"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/localTextViewID"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/normal_tv_title"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="8dp"
+                android:background="#006699"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="本地"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#FF6347"
+        android:tag="back"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/news_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:drawableBottom="@drawable/titlebar_refresh_detail_cancel"
+            android:text="删除"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</FrameLayout>

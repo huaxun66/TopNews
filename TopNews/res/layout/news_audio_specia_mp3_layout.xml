@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="8dip"
+    android:paddingRight="8dip" >
+
+    <ImageView
+        android:id="@+id/audio_icon"
+        android:layout_width="26dip"
+        android:layout_height="26dip"
+        android:scaleType="fitXY"
+        android:src="@drawable/audio_icon" />
+
+    <TextView
+        android:id="@+id/audio_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="8dip"
+        android:paddingLeft="4dip"
+        android:paddingTop="8dip"
+        android:singleLine="true"
+        android:text="东方网东方网东方网东方网"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+</LinearLayout>

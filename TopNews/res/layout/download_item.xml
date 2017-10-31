@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/download_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
+        android:focusable="false"
+        android:text="文件名称"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/download_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/download_label"
+        android:layout_marginLeft="3dp"
+        android:focusable="false"
+        android:text="当前状态"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/download_remove_btn"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/subscribe_item_bg_blue"
+        android:focusable="false"
+        android:gravity="center"
+        android:text="@string/remove"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/download_stop_btn"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/download_remove_btn"
+        android:background="@drawable/subscribe_item_bg_blue"
+        android:focusable="false"
+        android:gravity="center"
+        android:text="@string/stop"
+        android:textColor="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/download_pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/download_state"
+        android:focusable="false"
+        android:progressDrawable="@drawable/webview_progress_bar" />
+
+</RelativeLayout>

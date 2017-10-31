@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 大图：标题下方加一张大图 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/front"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:tag="front" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/big_image_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17.5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="广州车展开幕：50余款重磅新车,广州车展开幕：50余款重磅新车广州车展开幕：50余款重磅新车"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/big_image_rl"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" >
+
+            <ImageView
+                android:id="@+id/big_image_iv"
+                android:layout_width="300dp"
+                android:layout_height="140dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="17.5dp"
+            android:layout_marginRight="17.5dp" >
+
+            <TextView
+                android:id="@+id/big_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="发布时间"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/big_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/big_tv_time"
+                android:scaleType="fitXY"
+                android:src="@drawable/article_tip_special" />
+
+            <ImageView
+                android:id="@+id/popicon"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                android:layout_alignParentRight="true"
+                android:duplicateParentState="false"
+                android:scaleType="center"
+                android:src="@drawable/popicon_listpage"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/localTextViewID"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="8dp"
+                android:background="#006699"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="本地"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#FF6347"
+        android:tag="back"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/news_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:drawableBottom="@drawable/titlebar_refresh_detail_cancel"
+            android:text="删除"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</FrameLayout>

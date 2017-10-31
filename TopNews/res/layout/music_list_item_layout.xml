@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp" >
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:tag="back" >
+
+        <TextView
+            android:id="@+id/music_delete"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#FF6347"
+            android:drawableBottom="@drawable/titlebar_refresh_detail_cancel"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/music_delete_forever"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/music_delete"
+            android:layout_marginRight="10dp"
+            android:background="#FF6347"
+            android:gravity="center"
+            android:text="永久删除"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/music_content"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"            
+            android:layout_toLeftOf="@+id/music_delete_forever"
+            android:layout_marginRight="10dp"
+            android:background="#FF6347"
+            android:gravity="center"
+            android:text="详细信息"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/front"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#FFFFFF"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical"
+        android:tag="front">
+
+        <ImageView
+            android:id="@+id/add_music"
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10.0dp"
+            android:src="@drawable/add_music_unselect" />
+
+        <TextView
+            android:id="@+id/music_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5.0dp"
+            android:text="--:--" />
+
+        <TextView
+            android:id="@+id/music_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5.0dip"
+            android:layout_toRightOf="@+id/add_music"
+            android:focusable="true"
+            android:text="歌曲名称"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/music_Artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/music_title"
+            android:layout_below="@id/music_title"
+            android:text="歌手" />
+    </RelativeLayout>
+
+</FrameLayout>

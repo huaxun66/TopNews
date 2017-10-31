@@ -1,0 +1,374 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res/com.huaxun"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_3" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/personal_background_image"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-115dp"
+            android:background="@drawable/bg_10" />
+
+        <com.huaxun.menuLeft.view.SpringbackScrollView
+            android:id="@+id/personal_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/login_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80.0dip"
+                    android:orientation="horizontal" >
+
+                    <com.huaxun.view.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/user_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30.0dip"
+                        android:src="@drawable/default_round_head"
+                        app:border_color="#FFffffff"
+                        app:border_width="1dp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="NickName | gender"
+                            android:textColor="@color/white"
+                            android:textSize="20.0sp" />
+
+                        <TextView
+                            android:id="@+id/user_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="Location"
+                            android:ellipsize="marquee"
+                            android:textColor="@color/white"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/weather_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!--
+                        <com.huaxun.view.GifImageView
+                            android:id="@+id/weather_icon_gif"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:layout_marginLeft="10.0dip"
+                            android:layout_marginRight="30.0dip"
+                            android:layout_marginTop="10.0dip"
+                            android:src="@drawable/weather_gif"
+                            android:visibility="gone"
+                            attr:auto_play="true" />
+                         -->
+                        
+
+                        <ImageView
+                            android:id="@+id/weather_icon_drawable"
+                            android:layout_width="80dip"
+                            android:layout_height="80dip"
+                            android:layout_marginLeft="10.0dip"
+                            android:layout_marginRight="20.0dip"
+                            android:layout_marginTop="10.0dip"
+                            android:src="@drawable/weather_anim" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dip"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/weather_city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="20.0dip"
+                                android:layout_marginRight="20.0dip"
+                                android:layout_marginTop="5.0dip"
+                                android:text="上海"
+                                android:textColor="@color/white"
+                                android:textSize="20.0sp" />
+
+                            <TextView
+                                android:id="@+id/weather_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="20.0dip"
+                                android:layout_marginRight="20.0dip"
+                                android:layout_marginTop="5.0dip"
+                                android:text="0°C~5°C"
+                                android:textColor="@color/white"
+                                android:textSize="20.0sp" />
+
+                            <TextView
+                                android:id="@+id/weather_des"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="20.0dip"
+                                android:layout_marginRight="20.0dip"
+                                android:layout_marginTop="5.0dip"
+                                android:text="多云"
+                                android:textColor="@color/white"
+                                android:textSize="20.0sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.huaxun.radio.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/left_drawer_more_weather"
+                        android:textColor="#BBBBBB"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.huaxun.menuLeft.view.SpringbackScrollView>
+    </RelativeLayout>
+
+    <ImageView style="@style/left_drawer_item_line" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/picture_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_pic"
+                    android:text="@string/left_drawer_item_picture" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/picturewall_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_pic_wall"
+                    android:text="@string/left_drawer_item_picturewall" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/search_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_search"
+                    android:text="@string/left_drawer_item_search" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/favorite_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_favorite"
+                    android:text="@string/left_drawer_item_favorite" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/message_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    android:id="@+id/message_text"
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_message"
+                    android:text="@string/left_drawer_item_message" />
+
+                <TextView
+                    android:id="@+id/top_message_count"
+                    style="@style/left_drawer_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="25.0dip"
+                    android:layout_marginTop="6.0dip"
+                    android:layout_toRightOf="@id/message_text"
+                    android:background="@drawable/left_drawer_count_bg" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/offline_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_offline"
+                    android:text="@string/left_drawer_item_offline" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/encrypt_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    android:id="@+id/encrypt_text"
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/left_drawer_activity_selector"
+                    android:text="@string/left_drawer_item_encrypt" />
+
+                <TextView
+                    android:id="@+id/top_encrypt_count"
+                    style="@style/left_drawer_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="25.0dip"
+                    android:layout_marginTop="6.0dip"
+                    android:layout_toRightOf="@id/encrypt_text"
+                    android:background="@drawable/left_drawer_count_bg" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/feedback_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_feedback"
+                    android:text="@string/left_drawer_item_feedback" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/biz_pc_account_line" />
+
+            <RelativeLayout
+                android:id="@+id/setting_btn"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_setting"
+                    android:text="@string/left_drawer_item_setting" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView style="@style/left_drawer_item_line" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="19.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_weight="0.0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.huaxun.view.SwitchButton
+            android:id="@+id/night_mode_btn"
+            style="@style/Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true" />
+
+        <!-- myapp:thumb="@drawable/wiper_switch_slipper_btn" -->
+        <!-- myapp:track="@drawable/wiper_switch_btn" -->
+
+        <TextView
+            android:id="@+id/night_mode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15.0dip"
+            android:textColor="@color/left_drawer_night_mode_text"
+            android:textSize="15.0sp" />
+    </LinearLayout>
+</LinearLayout>

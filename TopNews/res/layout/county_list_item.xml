@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<ImageView 
+	    android:id="@+id/county_array_left"
+	    android:layout_width="28dp"
+	    android:layout_height="28dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginRight="40dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginTop="15dp"
+	    android:layout_marginBottom="15dp"
+	    android:layout_centerVertical="true"
+	    android:focusable="false"
+	    android:clickable="true"
+	    />    
+    
+	<TextView
+	    android:id="@+id/county_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="22sp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_toRightOf="@id/county_array_left"
+	    android:textColor="@android:color/black"
+	    android:layout_centerVertical="true"
+	    />
+</RelativeLayout>

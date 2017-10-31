@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:text="@string/hello_world" >
+
+      <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+                
+        <ImageButton
+            android:id="@+id/topBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/sl_nav_back"
+            android:contentDescription="返回"/>
+    
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#444444"
+            android:text="更多电台"
+            android:textSize="20sp"/>  
+            
+         <ImageButton
+            android:id="@+id/topAdd"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/radiouserspace"
+            android:contentDescription="新加电台"/>
+    </LinearLayout> 
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FFE7E7E7" />
+    
+    <com.huaxun.radio.DragGridView
+        android:id="@+id/dragGridView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:horizontalSpacing="8dip"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:verticalSpacing="10dip"
+        android:visibility="visible" />
+
+</LinearLayout>

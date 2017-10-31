@@ -1,0 +1,139 @@
+<com.huaxun.view.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#FFFFFFFF"
+        android:id="@+id/radio_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.huaxun.radio.ImageCycleView
+                android:id="@+id/iv_cycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/recommendTitleID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#BFBFBF"
+                android:paddingBottom="3dp"
+                android:paddingLeft="18dp"
+                android:paddingTop="3dp"
+                android:text="推荐"
+                android:textSize="18sp" />
+
+            <GridView
+                android:id="@+id/recommendGridViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:gravity="center"
+                android:horizontalSpacing="3dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:verticalSpacing="10dp" />
+
+            <LinearLayout
+                android:id="@+id/shanghailayoutID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#BFBFBF"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp" >
+
+                <TextView
+                    android:id="@+id/title1ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="上海"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/more1ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="更多"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/shanghaiGridViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:gravity="center"
+                android:horizontalSpacing="3dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:verticalSpacing="10dp" />
+
+            <LinearLayout
+                android:id="@+id/dajialayoutID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#BFBFBF"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp" >
+
+                <TextView
+                    android:id="@+id/title2ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="大家在听"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/more2ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="更多"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/dajiaGridViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:gravity="center"
+                android:horizontalSpacing="3dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:verticalSpacing="10dp" />
+        </LinearLayout>
+    </com.huaxun.view.ObservableScrollView>

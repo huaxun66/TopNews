@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="WeatherDB" >
+    </dbname>
+
+    <version value="1" >
+    </version>
+
+    <list>
+        <mapping class="com.huaxun.weather.Province" >
+        </mapping>
+
+        <mapping class="com.huaxun.weather.City" >
+        </mapping>
+
+        <mapping class="com.huaxun.weather.County" >
+        </mapping>
+    </list>
+    
+    
+    
+    <dbname value="FavoriteDB" >
+    </dbname>
+
+    <version value="3" >
+    </version>
+
+    <list>
+        <mapping class="com.huaxun.news.bean.News" >
+        </mapping>
+
+        <mapping class="com.huaxun.life.bean.LifeNews" >
+        </mapping>
+
+        <mapping class="com.huaxun.life.bean.LifeNewsImage">
+        </mapping>
+        
+        <mapping class="com.huaxun.life.bean.HotNews">
+        </mapping>
+
+        <mapping class="com.huaxun.life.bean.BlogItem">
+        </mapping>
+    </list>
+
+</litepal>

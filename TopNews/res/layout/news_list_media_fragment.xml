@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/detail_loading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@anim/loading_progress_bar" />
+    
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"  >
+    
+    <!-- ptrAnimationStyle: rotate,flip,frame -->
+
+      <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_to_refresh_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#ffdddddd"
+        android:dividerHeight="0.5dp"
+        ptr:ptrListViewExtrasEnabled="true"
+        ptr:ptrHeaderTextColor="#000000" />
+    
+     <RelativeLayout
+        android:id="@+id/notify_view"
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:layout_marginLeft="6.0dip"
+        android:layout_marginRight="6.0dip"
+        android:layout_marginTop="6.0dip"
+        android:background="@drawable/bg_notify"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/notify_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#FFFFFF"/>
+      </RelativeLayout>
+    </FrameLayout> 
+    
+    <com.huaxun.news.MediaFrameLayout
+        android:id="@+id/media_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="播放器"
+        android:visibility="gone" />
+
+</RelativeLayout>

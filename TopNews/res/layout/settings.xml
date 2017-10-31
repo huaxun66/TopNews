@@ -1,0 +1,378 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true" >
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10.0dip" >
+
+                <LinearLayout
+                    android:id="@+id/setting_font_size"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/font_size_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_font_size" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/font_size"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/font_size_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_picturewall_mode"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/picturewall_mode_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_picturewall_mode" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/picturewall_mode"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/picturewall_mode_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_lock_mode"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/lock_mode_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_lock_mode" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/lock_mode"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/lock_mode_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_aotudownload_news"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/aotudownload_news_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_aotudownload_news" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/aotudownload_news"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/aotudownload_news_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_download_media_mode"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/download_media_mode_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_download_media_mode" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/download_media_mode"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/download_media_mode_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_clear"
+                    style="@style/setting_item_end" >
+
+                    <TextView
+                        android:id="@+id/clear_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_clear" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/cache_size"
+                        style="@style/setting_alt_text"
+                        android:singleLine="true" />
+
+                    <ImageView
+                        android:id="@+id/clear_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_download_only_wifi"
+                    style="@style/setting_item_head" >
+
+                    <TextView
+                        android:id="@+id/download_only_wifi_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_download_only_wifi" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/download_only_wifi_checkbox"
+                        android:checked="true"
+                        style="@style/setting_checkbox" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_enable_jpush"
+                    style="@style/setting_item_head" >
+
+                    <TextView
+                        android:id="@+id/enable_jpush_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_enable_jpush" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/enable_jpush_checkbox"
+                        android:checked="true"
+                        style="@style/setting_checkbox" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tts_setting"
+                    style="@style/setting_item_center"
+                    android:layout_marginTop="15.0dip" >
+
+                    <TextView
+                        android:id="@+id/tts_setting_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_tts" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/iat_setting"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/iat_setting_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_iat" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/isv_setting"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/isv_setting_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_isv" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_when_favor"
+                    style="@style/setting_item_center"
+                    android:layout_marginTop="15.0dip" >
+
+                    <TextView
+                        android:id="@+id/share_when_favor_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_share_when_favor" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_share_when_favor"
+                        style="@style/setting_checkbox" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_when_diggbury"
+                    style="@style/setting_item_end" >
+
+                    <TextView
+                        android:id="@+id/share_when_diggbury_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_share_when_diggbury" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_share_when_diggbury"
+                        style="@style/setting_checkbox" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/update"
+                    style="@style/setting_item_center" >
+
+                    <TextView
+                        android:id="@+id/update_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_update" />
+
+                    <ImageView
+                        android:id="@+id/version_new"
+                        style="@style/setting_hint_new"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/current_version"
+                        style="@style/setting_alt_text" />
+
+                    <ImageView
+                        android:id="@+id/update_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recommendation"
+                    style="@style/setting_item_head"
+                    android:layout_marginTop="15.0dip"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/recommendation_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_recommend" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/recommendation_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/switch_domain"
+                    style="@style/setting_item_center"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/switch_domain_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_switch_domain" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_switch_domain"
+                        style="@style/setting_checkbox" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/use_help"
+                    style="@style/setting_item_end" >
+
+                    <TextView
+                        android:id="@+id/use_help_text"
+                        style="@style/setting_item_text"
+                        android:text="@string/setting_use_help" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/use_help_arrow"
+                        style="@style/setting_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/copyright"
+                style="@style/setting_copyright" />
+
+            <TextView
+                android:id="@+id/release_info"
+                style="@style/setting_release_info" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

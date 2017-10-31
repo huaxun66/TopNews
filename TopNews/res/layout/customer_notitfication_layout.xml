@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="64dp" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_hx" />
+
+    <RelativeLayout        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_marginLeft="20dp" >
+
+        <RelativeLayout
+            android:id="@+id/title_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/NotificationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:text="15:20"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/NotificationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/time"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="测试标题 "
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text"
+            style="@style/NotificationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_rl"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="1"
+            android:text="测试内容   : 是事实的发生分散啊发发暗示法士大夫发生分散啊发发暗发生分散啊发发暗"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

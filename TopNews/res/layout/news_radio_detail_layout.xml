@@ -1,0 +1,425 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayoutID"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:scaleType="fitXY" >
+    
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+                
+        <ImageButton
+            android:id="@+id/topBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/sl_nav_back"
+            android:contentDescription="返回"/>
+    
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#444444"
+            android:text="电台详情"
+            android:textSize="20sp"/>  
+            
+         <ImageButton
+            android:id="@+id/topList"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/radioplaylist"
+            android:contentDescription="电台列表"/>
+    </LinearLayout> 
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FFE7E7E7" />
+
+    <ScrollView
+        android:id="@+id/scrollviewID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/radioImageID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="-> 电台介绍"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/lv_divider1" />
+
+            <TextView
+                android:id="@+id/radioIntroduceID"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/lv_divider1" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="8dip"
+                    android:text="-> 最新评论"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/morePingLunID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="8dip"
+                    android:text="更多 >"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/lv_divider1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" >
+
+                <ImageView
+                    android:id="@+id/usericon1ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/setting_weibo_east_bright" />
+
+                <TextView
+                    android:id="@+id/username1ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/usericon1ID"
+                    android:text="匿名用户"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userpinglun1ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/username1ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon1ID"
+                    android:lines="2"
+                    android:text=" Android布局是应用界面开发的重要一环，在Android中，共有五种布局方式，分别是：LinearLayout （线性布局），FrameLayout（框架布"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun1ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun1ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon1ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun2ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun1ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun1ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun3ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun1ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun2ID"
+                    android:src="@drawable/icon_desk" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/lv_divider1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" >
+
+                <ImageView
+                    android:id="@+id/usericon2ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/setting_weibo_east_bright" />
+
+                <TextView
+                    android:id="@+id/username2ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/usericon2ID"
+                    android:text="匿名用户"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userpinglun2ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/username2ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon2ID"
+                    android:lines="2"
+                    android:text=" Android布局是应用界面开发的重要一环，在Android中，共有五种布局方式，分别是：LinearLayout （线性布局），FrameLayout（框架布"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun11ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun2ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon2ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun12ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun2ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun11ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun13ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun2ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun12ID"
+                    android:src="@drawable/icon_desk" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/lv_divider1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" >
+
+                <ImageView
+                    android:id="@+id/usericon3ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/setting_weibo_east_bright" />
+
+                <TextView
+                    android:id="@+id/username3ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/usericon3ID"
+                    android:text="匿名用户"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userpinglun3ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/username3ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon3ID"
+                    android:lines="2"
+                    android:text=" Android布局是应用界面开发的重要一环，在Android中，共有五种布局方式，分别是：LinearLayout （线性布局），FrameLayout（框架布"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun21ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun3ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/usericon3ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun22ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun3ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun21ID"
+                    android:src="@drawable/icon_desk" />
+
+                <ImageView
+                    android:id="@+id/ImagePinlun23ID"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/userpinglun3ID"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/ImagePinlun22ID"
+                    android:src="@drawable/icon_desk" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+            android:id="@+id/bigContainer"
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:layout_marginTop="-60dp"
+            android:orientation="vertical" >
+
+            <SeekBar
+                android:id="@+id/player_progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:maxHeight="2.0dp"
+                android:minHeight="2.0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dip"
+                android:progress="0"
+                android:progressDrawable="@drawable/player_progress_drawable"
+                android:secondaryProgress="0"
+                android:thumb="@drawable/player_progress_thumb"
+                android:thumbOffset="0dp" />
+
+            <RelativeLayout
+                android:id="@+id/player_relate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dip" >
+
+                <ImageButton
+                    android:id="@+id/player_up"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/playPauseView"
+                    android:background="@drawable/play_button_up_bg" />
+
+                <ImageButton
+                    android:id="@+id/playPauseView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/player_pause" />
+
+                <ImageButton
+                    android:id="@+id/player_next"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@id/playPauseView"
+                    android:background="@drawable/sl_player_next" />
+
+                <TextView
+                    android:id="@+id/player_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dip"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:id="@+id/player_handover"
+                    android:layout_width="25dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dip"
+                    android:background="@drawable/recover"
+                    android:gravity="center" />
+            </RelativeLayout>
+     </LinearLayout>
+
+</LinearLayout>

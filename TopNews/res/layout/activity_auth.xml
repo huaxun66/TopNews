@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff5f5f5"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:id="@+id/llBody"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layoutAnimation="@anim/layout_slide_in_left" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/list_item_first_normal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/sina_weibo" />
+
+            <CheckedTextView
+                android:id="@+id/ctvSw"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/cb_drw"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="尚未授权"
+                android:textColor="#ff000000"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/list_item_middle_normal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/tencent_weibo" />
+
+            <CheckedTextView
+                android:id="@+id/ctvTc"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/cb_drw"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="尚未授权"
+                android:textColor="#ff000000"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/list_item_middle_normal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/qzone" />
+
+            <CheckedTextView
+                android:id="@+id/ctvQz"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/cb_drw"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="尚未授权"
+                android:textColor="#ff000000"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/list_item_last_normal"
+            android:paddingRight="10dp" >
+            
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/ssdk_oks_classic_wechat" />
+
+            <CheckedTextView
+                android:id="@+id/ctvWc"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/cb_drw"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="尚未授权"
+                android:textColor="#ff000000"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

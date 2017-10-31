@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" > 
+    
+    <EditTextPreference
+        android:key="isv_username_preference"   
+		android:title="声纹解锁用戶名" 
+		android:dialogTitle="请输入用戶名(使用英文字母或者字母和数字的组合，勿使用中文字符)"
+        android:summary="默认值：Watson "
+		android:defaultValue="Watson" />
+
+    
+	<CheckBoxPreference
+		android:key="@string/pref_key_isv_root"
+		android:title="@string/pref_title_isv_root"
+		android:defaultValue="false" />
+
+</PreferenceScreen>
+
