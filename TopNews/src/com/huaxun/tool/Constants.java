@@ -26,20 +26,21 @@ public class Constants {
 	public static String DEVICE_MAC = "";// MAC地址
 	public static String JPUSH_ALIAS = "";// 极光推送别名
 	
-	//Btn的标识	
+	//Column的Id	
 	public static final int BTN_FLAG_NEWS = 0x01;
 	public static final int BTN_FLAG_LIFE = 0x01 << 1;
 	public static final int BTN_FLAG_MUSIC = 0x01 << 2;
 	public static final int BTN_FLAG_RADIO = 0x01 << 3;	
 	public static final int BTN_FLAG_CHAT = 0x01 << 4;
+	public static final int BTN_FLAG_MORE = 0x01 << 5;
 	
-	//Fragment的标识
+	//Column的name
 	public static final String FRAGMENT_FLAG_NEWS = "新闻";
 	public static final String FRAGMENT_FLAG_LIFE = "生活";
 	public static final String FRAGMENT_FLAG_MUSIC = "音乐"; 
 	public static final String FRAGMENT_FLAG_RADIO = "电台"; 
 	public static final String FRAGMENT_FLAG_CHAT = "聊天"; 
-	public static final String FRAGMENT_FLAG_SIMPLE = "simple"; 
+	public static final String FRAGMENT_FLAG_MORE = "更多";
 	
 
 	public final static int mark_recom = 0;
@@ -47,6 +48,7 @@ public class Constants {
 	public final static int mark_frist = 2;
 	public final static int mark_exclusive = 3;
 	public final static int mark_favor = 4;
+	
 	
 	public static final int[] BG_RESOURCES = {
 		R.drawable.bg_1, R.drawable.bg_2, R.drawable.bg_3, R.drawable.bg_4,

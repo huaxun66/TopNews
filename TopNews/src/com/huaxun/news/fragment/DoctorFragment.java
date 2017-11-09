@@ -33,6 +33,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.huaxun.R;
 import com.huaxun.app.AppApplication;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.news.service.PlayerService;
 import com.huaxun.news.activity.WebActivity;

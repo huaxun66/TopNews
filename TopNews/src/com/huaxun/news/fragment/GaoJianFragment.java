@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 
 import com.huaxun.R;
 import com.huaxun.app.AppApplication;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.utils.FileUtil;
 import com.huaxun.utils.NetUtil;
 import com.huaxun.utils.Util;

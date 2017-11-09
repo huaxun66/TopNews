@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.huaxun.R;
-import com.huaxun.news.fragment.BaseFragment;
+import com.huaxun.base.BaseFragment;
 
 public class BlogListFragment extends BaseFragment implements OnClickListener {
 	private View view;

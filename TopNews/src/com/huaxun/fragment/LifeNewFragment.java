@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.life.fragment.BlogListFragment;
 import com.huaxun.life.fragment.HotListFragment;
 import com.huaxun.life.fragment.LifeListFragment;
@@ -29,7 +30,7 @@ import com.huaxun.news.bean.Node;
 import com.huaxun.utils.Util;
 import com.huaxun.view.ColumnHorizontalScrollView;
 
-public class LifeNewFragment extends Fragment {
+public class LifeNewFragment extends BaseFragment {
 	/** 自定义HorizontalScrollView */
 	private View view;
 	private Context context;

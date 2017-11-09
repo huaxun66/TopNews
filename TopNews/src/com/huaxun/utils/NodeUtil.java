@@ -24,7 +24,6 @@ public class NodeUtil {
 			stringbuilder.append(nodeList.get(nodeList.size()-1).nodename);
 		}
 		String nodeString = stringbuilder.toString();
-//		BaseTools.showlog(nodeString);
 		editor.putString("nodeString", nodeString);
 		editor.commit();
 	}
@@ -40,8 +39,6 @@ public class NodeUtil {
 			setNodeListOrder(context,nodeList);
 		} else {
 			String[] listOrder = nodeString.split(",");
-//			for(int k =0 ;k<listOrder.length;k++)
-//				BaseTools.showlog("reorderNodeName="+listOrder[k]);
 			for (int i=0; i<listOrder.length; i++) {
 				for (int j=0; j<nodeList.size(); j++) {
 					if (listOrder[i].equals(nodeList.get(j).nodename)) {

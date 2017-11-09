@@ -17,7 +17,6 @@
         android:minWidth="72.0dip"
         android:textColor="@color/subscribe_item_text_color_normal"
         android:textSize="14.0sp" />
-    <!-- android:layout_margin="5dip" -->
 
     <ImageView
         android:id="@+id/icon_new"

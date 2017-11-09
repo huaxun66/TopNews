@@ -3,39 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:layout_alignParentBottom="true"
-    android:background="#fff3f3f3"
-    android:gravity="center_vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp" >
-
-    <com.huaxun.view.ImageText
-        android:id="@+id/btn_news"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true" />
-
-    <com.huaxun.view.ImageText
-        android:id="@+id/btn_life"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/btn_news" />
-
-    <com.huaxun.view.ImageText
-        android:id="@+id/btn_music"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/btn_life" />
-
-    <com.huaxun.view.ImageText
-        android:id="@+id/btn_radio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/btn_music" />
-
-    <com.huaxun.view.ImageText
-        android:id="@+id/btn_chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+    android:gravity="center_vertical">
 
 </com.huaxun.view.BottomControlPanel>

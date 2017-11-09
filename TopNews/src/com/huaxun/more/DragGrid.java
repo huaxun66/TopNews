@@ -1,6 +1,7 @@
-package com.huaxun.news;
+package com.huaxun.more;
 
 import com.huaxun.R;
+import com.huaxun.more.adapter.MoreDragAdapter;
 import com.huaxun.news.adapter.DragAdapter;
 import com.huaxun.tool.BaseTools;
 import com.huaxun.utils.Util;
@@ -174,11 +175,12 @@ public class DragGrid extends GridView {
 		int tempPostion = pointToPosition(x, y);
 //		if (tempPostion != AdapterView.INVALID_POSITION) {
 			dropPosition = tempPostion;
-			DragAdapter mDragAdapter = (DragAdapter) getAdapter();
+			MoreDragAdapter mDragAdapter = (MoreDragAdapter) getAdapter();
 			//显示刚拖动的ITEM
 			mDragAdapter.setShowDropItem(true);
 			//刷新适配器，让对应的ITEM显示
 			mDragAdapter.notifyDataSetChanged();
+			mDragAdapter.exchangeDone();
 //		}
 	}
 	/**
@@ -195,9 +197,7 @@ public class DragGrid extends GridView {
 
 				startPosition = position;// 第一次点击的postion
 				dragPosition = position;
-				if (startPosition <= 1) {
-					return false;
-				}
+
 				ViewGroup dragViewGroup = (ViewGroup) getChildAt(dragPosition - getFirstVisiblePosition());
 				TextView dragTextView = (TextView)dragViewGroup.findViewById(R.id.text_item);
 				dragTextView.setSelected(true);
@@ -282,7 +282,7 @@ public class DragGrid extends GridView {
 	
 	/** 隐藏 放下 的ITEM*/
 	private void hideDropItem() {
-		((DragAdapter) getAdapter()).setShowDropItem(false);
+		((MoreDragAdapter) getAdapter()).setShowDropItem(false);
 	}
 	
 	/** 获取移动动画 */
@@ -301,108 +301,105 @@ public class DragGrid extends GridView {
 	public void OnMove(int x, int y) {
 		// 拖动的VIEW下方的POSTION
 		int dPosition = pointToPosition(x, y);
-		// 判断下方的POSTION是否是最开始2个不能拖动的
-		if (dPosition > 1) {
-	        if ((dPosition == -1) || (dPosition == dragPosition)){
-	        	return;
-	        }
-		    dropPosition = dPosition;
-		    if (dragPosition != startPosition){
-		    	dragPosition = startPosition;
-		    }
-			int movecount;
-			//拖动的=开始拖的，并且 拖动的 不等于放下的
-		    if ((dragPosition == startPosition) || (dragPosition != dropPosition)){
-		    	//移需要移动的动ITEM数量
-		    	movecount = dropPosition - dragPosition;
-		    }else{
-		    	//移需要移动的动ITEM数量为0
-		    	movecount = 0;
-		    }
-		    if(movecount == 0){
-		    	return;
-		    }
-		    
-		    int movecount_abs = Math.abs(movecount);
-		    
-			if (dPosition != dragPosition) {
-				//dragGroup设置为不可见
-				ViewGroup dragGroup = (ViewGroup) getChildAt(dragPosition);
-				dragGroup.setVisibility(View.INVISIBLE);
-				
-				float to_x = 1;// 当前下方positon
-				float to_y;// 当前下方右边positon
-				//x_vlaue移动的距离百分比（相对于自己长度的百分比）
-				float x_vlaue = ((float) mHorizontalSpacing / (float) itemWidth) + 1.0f;
-				//y_vlaue移动的距离百分比（相对于自己宽度的百分比）
-				float y_vlaue = ((float) mVerticalSpacing / (float) itemHeight) + 1.0f;
-				Log.d("x_vlaue", "x_vlaue = " + x_vlaue);
-				for (int i = 0; i < movecount_abs; i++) {
-					 to_x = x_vlaue;
-					 to_y = y_vlaue;
-					//像左
-					if (movecount > 0) {
-						// 判断是不是同一行的
-						holdPosition = dragPosition + i + 1;
-						if (dragPosition / nColumns == holdPosition / nColumns) {
-							to_x = - x_vlaue;
-							to_y = 0;
-						} else if (holdPosition % 4 == 0) {
-							to_x = 3 * x_vlaue;
-							to_y = - y_vlaue;
-						} else {
-							to_x = - x_vlaue;
-							to_y = 0;
-						}
+        if ((dPosition == -1) || (dPosition == dragPosition)){
+        	return;
+        }
+	    dropPosition = dPosition;
+	    if (dragPosition != startPosition){
+	    	dragPosition = startPosition;
+	    }
+		int movecount;
+		//拖动的=开始拖的，并且 拖动的 不等于放下的
+	    if ((dragPosition == startPosition) || (dragPosition != dropPosition)){
+	    	//移需要移动的动ITEM数量
+	    	movecount = dropPosition - dragPosition;
+	    }else{
+	    	//移需要移动的动ITEM数量为0
+	    	movecount = 0;
+	    }
+	    if(movecount == 0){
+	    	return;
+	    }
+	    
+	    int movecount_abs = Math.abs(movecount);
+	    
+		if (dPosition != dragPosition) {
+			//dragGroup设置为不可见
+			ViewGroup dragGroup = (ViewGroup) getChildAt(dragPosition);
+			dragGroup.setVisibility(View.INVISIBLE);
+			
+			float to_x = 1;// 当前下方positon
+			float to_y;// 当前下方右边positon
+			//x_vlaue移动的距离百分比（相对于自己长度的百分比）
+			float x_vlaue = ((float) mHorizontalSpacing / (float) itemWidth) + 1.0f;
+			//y_vlaue移动的距离百分比（相对于自己宽度的百分比）
+			float y_vlaue = ((float) mVerticalSpacing / (float) itemHeight) + 1.0f;
+			Log.d("x_vlaue", "x_vlaue = " + x_vlaue);
+			for (int i = 0; i < movecount_abs; i++) {
+				 to_x = x_vlaue;
+				 to_y = y_vlaue;
+				//像左
+				if (movecount > 0) {
+					// 判断是不是同一行的
+					holdPosition = dragPosition + i + 1;
+					if (dragPosition / nColumns == holdPosition / nColumns) {
+						to_x = - x_vlaue;
+						to_y = 0;
+					} else if (holdPosition % 4 == 0) {
+						to_x = 3 * x_vlaue;
+						to_y = - y_vlaue;
+					} else {
+						to_x = - x_vlaue;
+						to_y = 0;
+					}
+				}else{
+					//向右,下移到上，右移到左
+					holdPosition = dragPosition - i - 1;
+					if (dragPosition / nColumns == holdPosition / nColumns) {
+						to_x = x_vlaue;
+						to_y = 0;
+					} else if((holdPosition + 1) % 4 == 0){
+						to_x = -3 * x_vlaue;
+						to_y = y_vlaue;
 					}else{
-						//向右,下移到上，右移到左
-						holdPosition = dragPosition - i - 1;
-						if (dragPosition / nColumns == holdPosition / nColumns) {
-							to_x = x_vlaue;
-							to_y = 0;
-						} else if((holdPosition + 1) % 4 == 0){
-							to_x = -3 * x_vlaue;
-							to_y = y_vlaue;
-						}else{
-							to_x = x_vlaue;
-							to_y = 0;
-						}
+						to_x = x_vlaue;
+						to_y = 0;
 					}
-					ViewGroup moveViewGroup = (ViewGroup) getChildAt(holdPosition);
-					Animation moveAnimation = getMoveAnimation(to_x, to_y);
-					moveViewGroup.startAnimation(moveAnimation);
-					//如果是最后一个移动的，那么设置他的最后个动画ID为LastAnimationID
-					if (holdPosition == dropPosition) {
-						LastAnimationID = moveAnimation.toString();
-					}
-					moveAnimation.setAnimationListener(new AnimationListener() {
-
-						@Override
-						public void onAnimationStart(Animation animation) {
-							// TODO Auto-generated method stub
-							isMoving = true;
-						}
-
-						@Override
-						public void onAnimationRepeat(Animation animation) {
-							// TODO Auto-generated method stub
-
-						}
-
-						@Override
-						public void onAnimationEnd(Animation animation) {
-							// TODO Auto-generated method stub
-							// 如果为最后个动画结束，那执行下面的方法
-							if (animation.toString().equalsIgnoreCase(LastAnimationID)) {
-								DragAdapter mDragAdapter = (DragAdapter) getAdapter();
-								mDragAdapter.exchange(startPosition,dropPosition);
-								startPosition = dropPosition;
-								dragPosition = dropPosition;
-								isMoving = false;
-							}
-						}
-					});
 				}
+				ViewGroup moveViewGroup = (ViewGroup) getChildAt(holdPosition);
+				Animation moveAnimation = getMoveAnimation(to_x, to_y);
+				moveViewGroup.startAnimation(moveAnimation);
+				//如果是最后一个移动的，那么设置他的最后个动画ID为LastAnimationID
+				if (holdPosition == dropPosition) {
+					LastAnimationID = moveAnimation.toString();
+				}
+				moveAnimation.setAnimationListener(new AnimationListener() {
+
+					@Override
+					public void onAnimationStart(Animation animation) {
+						// TODO Auto-generated method stub
+						isMoving = true;
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation animation) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						// TODO Auto-generated method stub
+						// 如果为最后个动画结束，那执行下面的方法
+						if (animation.toString().equalsIgnoreCase(LastAnimationID)) {
+							MoreDragAdapter mDragAdapter = (MoreDragAdapter) getAdapter();
+							mDragAdapter.exchange(startPosition, dropPosition);
+							startPosition = dropPosition;
+							dragPosition = dropPosition;
+							isMoving = false;
+						}
+					}
+				});
 			}
 		}
 	}

@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.chat.ChatDetailActivity;
 import com.huaxun.chat.FileActivity;
 import com.huaxun.chat.SettingDialog;
@@ -41,7 +42,7 @@ import com.huaxun.chat.util.Tools;
 import com.huaxun.tool.BaseTools;
 import com.huaxun.utils.FileUtil;
 
-public class ChatFragment extends Fragment implements OnClickListener{
+public class ChatFragment extends BaseFragment implements OnClickListener{
 	
 	private View view;
 	private Context context;

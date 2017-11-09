@@ -28,6 +28,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 import com.huaxun.R;
 import com.huaxun.app.AppApplication;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.news.activity.WebActivity;
 import com.huaxun.news.bean.ActivityData;

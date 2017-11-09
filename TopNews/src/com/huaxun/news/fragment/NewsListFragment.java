@@ -37,6 +37,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.fragment.NewsFragment;
 import com.huaxun.news.activity.PicBrowserActivity;

@@ -6,9 +6,11 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.Thread.UncaughtExceptionHandler;
+import java.net.NetworkInterface;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Set;
 
@@ -18,14 +20,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
-import cn.sharesdk.framework.ShareSDK;
 
 import com.huaxun.R;
 import com.huaxun.chat.faceMode.FaceConversionUtil;
@@ -114,11 +114,39 @@ public class AppApplication extends org.litepal.LitePalApplication {
 	}
 	
 	// 获取设备mac地址
-	private String getDeviceMac() {
-		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-		WifiInfo info = wifi.getConnectionInfo();
-		String macAddress = info.getMacAddress();
-		return macAddress;
+	private String getDeviceMac() {{
+        String address = null;
+        try {
+            // 把当前机器上的访问网络接口的存入 Enumeration集合中
+            Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+            Log.d("TEST_BUG", " interfaceName = " + interfaces);
+            while (interfaces.hasMoreElements()) {
+                NetworkInterface netWork = interfaces.nextElement();
+                // 如果存在硬件地址并可以使用给定的当前权限访问，则返回该硬件地址（通常是 MAC）。
+                byte[] by = netWork.getHardwareAddress();
+                if (by == null || by.length == 0) {
+                    continue;
+                }
+                StringBuilder builder = new StringBuilder();
+                for (byte b : by) {
+                    builder.append(String.format("%02X:", b));
+                }
+                if (builder.length() > 0) {
+                    builder.deleteCharAt(builder.length() - 1);
+                }
+                String mac = builder.toString();
+                Log.d("TEST_BUG", "interfaceName="+netWork.getName()+", mac="+mac);
+                // 从路由器上在线设备的MAC地址列表，可以印证设备Wifi的 name 是 wlan0
+                if (netWork.getName().equals("wlan0")) {
+                    Log.d("TEST_BUG", " interfaceName ="+netWork.getName()+", mac="+mac);
+                    address = mac;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return address;
+        }
 	}
 	
 	private void initJpush() {

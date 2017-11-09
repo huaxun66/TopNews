@@ -52,6 +52,7 @@ import android.widget.Toast;
 
 import com.huaxun.R;
 import com.huaxun.app.AppApplication;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.dialog.LoadingDialog;
 import com.huaxun.download.DownloadInfo;
@@ -64,7 +65,6 @@ import com.huaxun.music.bean.Mp3Info;
 import com.huaxun.music.util.OnLoadSearchFinishListener;
 import com.huaxun.music.util.SearchUtils;
 import com.huaxun.news.activity.DownloadListActivity;
-import com.huaxun.news.fragment.BaseFragment;
 import com.huaxun.tool.BaseTools;
 import com.huaxun.tool.Options;
 import com.huaxun.utils.FileUtil;

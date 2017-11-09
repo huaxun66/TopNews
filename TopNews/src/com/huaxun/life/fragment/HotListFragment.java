@@ -34,11 +34,11 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleLis
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.fragment.LifeNewFragment;
 import com.huaxun.life.activity.HotNewsDetailActivity;
 import com.huaxun.life.bean.HotNews;
-import com.huaxun.news.fragment.BaseFragment;
 import com.huaxun.tool.NewsUrls;
 import com.huaxun.tool.Options;
 import com.huaxun.utils.FileUtil;

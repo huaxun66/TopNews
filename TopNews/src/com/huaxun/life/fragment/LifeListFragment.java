@@ -29,11 +29,11 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleLis
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.life.activity.LifeNewsDetailActivity;
 import com.huaxun.life.bean.LifeNews;
 import com.huaxun.life.bean.LifeNewsList;
-import com.huaxun.news.fragment.BaseFragment;
 import com.huaxun.tool.NewsUrls;
 import com.huaxun.tool.Options;
 import com.lidroid.xutils.HttpUtils;

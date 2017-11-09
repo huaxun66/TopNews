@@ -26,11 +26,15 @@ public class ImageText extends LinearLayout{
 	private int UNCHECKED_COLOR = Color.GRAY;
 	public ImageText(Context context) {
 		super(context);
-		mContext = context;
+		init(context);
 	}
 
 	public ImageText(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		init(context);
+	}
+	
+	public void init(Context context) {
 		mContext = context;
 		DEFAULT_IMAGE_WIDTH = Util.dip2px(context, 20);
 		DEFAULT_IMAGE_HEIGHT = Util.dip2px(context, 20);
@@ -90,7 +94,11 @@ public class ImageText extends LinearLayout{
 		case Constants.BTN_FLAG_CHAT:
 			checkDrawableId = R.drawable.chat_selected;
 			break;
-		default:break;
+		case Constants.BTN_FLAG_MORE:
+			checkDrawableId = R.drawable.more_selected;
+			break;
+		default:
+			break;
 		}
 		if(mImageView != null){
 			mImageView.setImageResource(checkDrawableId);

@@ -109,7 +109,6 @@ public class NodeManagerActivity extends BaseActivity implements OnItemClickList
 	    public void onClick(View v) {
 	        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 	        if(userAdapter.isListChanged()){
-	        	BaseTools.showlog("11");
                  setResult(NewsFragment.NODERESULT1, intent);
             }else{
             	 setResult(NewsFragment.NODERESULT2, intent);	
@@ -150,16 +149,15 @@ public class NodeManagerActivity extends BaseActivity implements OnItemClickList
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-		// TODO Auto-generated method stub
         //如果点击的时候，之前动画还没结束，那么就让点击事件无效  
-        if(isMove){  
+        if(isMove){
             return;  
         } 
 		switch (parent.getId()){
 		case R.id.userGridView:
 			//position为 0，1 的不可以进行任何操作
 			if (position != 0 && position != 1) {
-				//获取点击的ImageView
+				//view转换成ImageView
 				final ImageView moveImageView = getView(view);
                 if (moveImageView != null) {
                 	//获取动画起始点坐标
@@ -234,7 +232,6 @@ public class NodeManagerActivity extends BaseActivity implements OnItemClickList
              }		
 			break;
 		}
-		
 	}
 	
 	/**
@@ -272,7 +269,7 @@ public class NodeManagerActivity extends BaseActivity implements OnItemClickList
 		TranslateAnimation moveAnimation = new TranslateAnimation(
 				startLocation[0], endLocation[0], startLocation[1],
 				endLocation[1]);
-		moveAnimation.setDuration(300L);//动画时间
+		moveAnimation.setDuration(500L);//动画时间
 		//动画配置
 		AnimationSet moveAnimationSet = new AnimationSet(true);
 		moveAnimationSet.setFillAfter(false);//动画效果执行完毕后，View对象不保留在终止的位置

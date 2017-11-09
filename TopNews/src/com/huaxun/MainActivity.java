@@ -31,12 +31,14 @@ import android.widget.TextView;
 import cn.sharesdk.framework.ShareSDK;
 
 import com.huaxun.app.AppApplication;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.dialog.ExitDialog;
 import com.huaxun.dialog.PushDialog;
 import com.huaxun.fragment.ChatFragment;
 import com.huaxun.fragment.LifeNewFragment;
 import com.huaxun.fragment.MenuLeftFragment;
 import com.huaxun.fragment.MenuRightFragment;
+import com.huaxun.fragment.MoreFragment;
 import com.huaxun.fragment.MusicFragment;
 import com.huaxun.fragment.NewsFragment;
 import com.huaxun.fragment.NewsRadioFragment;
@@ -54,7 +56,7 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 	
 	private SlidingMenu slide_menu;
 	public RelativeLayout root_layout;
-	public static BottomControlPanel bottomPanel = null;
+	public static BottomControlPanel bottomPanel;
 	public static RelativeLayout headPanel;
 	/** head 头部 的中间的Text*/
 	private TextView top_title;
@@ -97,7 +99,7 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 		checkShareNews(getIntent());
 		mCacheFragments = new HashMap<String, SoftReference<Fragment>>();
 		mAllFmt = new ArrayList<Fragment>();
-		setDefaultFirstFragment(Constants.FRAGMENT_FLAG_NEWS);
+		setDefaultFirstFragment();
 		
 		mShowDialogReceiver = new ShowDialogReceiver();
 		IntentFilter mShowDialogFilter = new IntentFilter("SHOW_PUSH_DIALOG");
@@ -152,7 +154,6 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 //		menu.clear();
-//		//Inflate the menu; this adds items to the action bar if it is present.
 //		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -213,8 +214,15 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 		bottomPanel = (BottomControlPanel)findViewById(R.id.bottom_layout);
 		bottomPanel.setOnClickListener(null);
 		if(bottomPanel != null){
-			bottomPanel.initBottomPanel();
+			bottomPanel.initBottomPanel(this);
 			bottomPanel.setBottomCallback(this);
+		}
+	}
+	
+	public void initBottomPanel() {
+		if(bottomPanel != null){
+			bottomPanel.initBottomPanel(this);
+			bottomPanel.btnChecked(Constants.BTN_FLAG_MORE);
 		}
 	}
 	
@@ -233,6 +241,8 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 			tag = Constants.FRAGMENT_FLAG_NEWS;
 		}else if((itemId & Constants.BTN_FLAG_CHAT) != 0){
 			tag = Constants.FRAGMENT_FLAG_CHAT;
+		}else if((itemId & Constants.BTN_FLAG_MORE) != 0){
+			tag = Constants.FRAGMENT_FLAG_MORE;
 		}
 		setTabSelection(tag);
 		top_title.setText(tag);
@@ -323,9 +333,9 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 		getSupportFragmentManager().beginTransaction().replace(R.id.id_right_menu_frame, rightMenuFragment).commit();
 	}
 	
-	private void setDefaultFirstFragment(String tag){
-		setTabSelection(tag);
-		bottomPanel.defaultBtnChecked();
+	private void setDefaultFirstFragment(){
+		setTabSelection(Constants.FRAGMENT_FLAG_NEWS);
+		bottomPanel.btnChecked(Constants.BTN_FLAG_NEWS);
 	}
 
 	private void setTabSelection(String tag) {
@@ -358,7 +368,7 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 	
 	//通过Tag创建Fragment
 	private Fragment createFragmentByTag (String tag) {
-		Fragment fmt = null;		
+		BaseFragment fmt = null;		
 		if(tag.equals(Constants.FRAGMENT_FLAG_NEWS)){
 			fmt = new NewsFragment();
 		}else if(tag.equals(Constants.FRAGMENT_FLAG_LIFE)){
@@ -369,6 +379,8 @@ public class MainActivity extends SlidingFragmentActivity implements BottomPanel
 			fmt = new NewsRadioFragment();
 		}else if(tag.equals(Constants.FRAGMENT_FLAG_CHAT)){
 			fmt = new ChatFragment();
+		}else if(tag.equals(Constants.FRAGMENT_FLAG_MORE)){
+			fmt = new MoreFragment();
 		}
 		return fmt;
 		

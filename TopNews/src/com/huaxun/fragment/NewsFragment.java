@@ -36,6 +36,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 import com.huaxun.R;
+import com.huaxun.base.BaseFragment;
 import com.huaxun.db.DataDB;
 import com.huaxun.dialog.LoadingDialog;
 import com.huaxun.news.activity.NodeManagerActivity;
@@ -62,7 +63,7 @@ import com.huaxun.view.ColumnHorizontalScrollView;
  * author:HX
  * blog : http://blog.csdn.net/vipzjyno1/
  */
-public class NewsFragment extends Fragment {
+public class NewsFragment extends BaseFragment {
 	/** 自定义HorizontalScrollView */
 	private View view;
 	private Context context;
