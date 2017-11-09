@@ -40,6 +40,7 @@ public class BottomControlPanel extends RelativeLayout implements View.OnClickLi
 			mBtn.setImage(getImageById(column.columnId));
 			mBtn.setText(column.columnName);
 			mBtn.setTag(column.columnName);
+//			mBtn.setBackgroundResource(R.drawable.touch_bg);
 			RelativeLayout.LayoutParams mParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 			if (i > 0) {
 				mParams.addRule(RelativeLayout.RIGHT_OF, fgColumnList.get(i-1).columnId);

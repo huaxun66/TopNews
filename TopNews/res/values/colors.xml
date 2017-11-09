@@ -28,6 +28,7 @@
     <color name="black">#ff000000</color>
     <color name="red">#ffff0000</color>
     <color name="light_blue">#5CACEE</color>
+    <color name="bottom_bg">#fff3f3f3</color>
     <color name="simple_333333">#ff333333</color>
     <color name="transparent">#00000000</color>
     <color name="simple_eeeeee">#ffeeeeee</color>
