@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.huaxun.R;
@@ -13,7 +14,7 @@ import com.huaxun.more.bean.Column;
 import com.huaxun.tool.Constants;
 import com.huaxun.utils.ColumnUtil;
 
-public class BottomControlPanel extends RelativeLayout implements View.OnClickListener {
+public class BottomControlPanel extends LinearLayout implements View.OnClickListener {
 	private int DEFALUT_BACKGROUND_COLOR = Color.rgb(243, 243, 243);
 	private BottomPanelCallback mBottomCallback = null;
 
@@ -41,10 +42,11 @@ public class BottomControlPanel extends RelativeLayout implements View.OnClickLi
 			mBtn.setText(column.columnName);
 			mBtn.setTag(column.columnName);
 //			mBtn.setBackgroundResource(R.drawable.touch_bg);
-			RelativeLayout.LayoutParams mParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-			if (i > 0) {
-				mParams.addRule(RelativeLayout.RIGHT_OF, fgColumnList.get(i-1).columnId);
-			}
+			LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(0, RelativeLayout.LayoutParams.WRAP_CONTENT);
+			mParams.weight = 1;
+//			if (i > 0) {
+//				mParams.addRule(RelativeLayout.RIGHT_OF, fgColumnList.get(i-1).columnId);
+//			}
 			mBtn.setLayoutParams(mParams);
 			addView(mBtn);
 		}
@@ -123,7 +125,7 @@ public class BottomControlPanel extends RelativeLayout implements View.OnClickLi
 
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
-		layoutItems(left, top, right, bottom);
+//		layoutItems(left, top, right, bottom);
 	}
 	
 	/**在这里，因为左右两个Item的paddingLeft,paddingRight已知，主要用来动态设置中间两个Item的间距
